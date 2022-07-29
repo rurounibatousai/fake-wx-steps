@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input::-webkit-input-placeholder {
+  @apply text-sm pl-1;
+}
+
+.no-leading {
+  line-height: 0;
+}

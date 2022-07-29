@@ -1,0 +1,37 @@
+{
+  "id": "3555077",
+  "name": "wx-sport",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "77822",
+      "name": "更多",
+      "font_class": "more",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "650749",
+      "name": "规范－导航栏－返回",
+      "font_class": "back",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "1328096",
+      "name": "更多",
+      "font_class": "forward",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
+      "icon_id": "5651349",
+      "name": "爱心",
+      "font_class": "collect",
+      "unicode": "e65c",
+      "unicode_decimal": 58972
+    }
+  ]
+}
