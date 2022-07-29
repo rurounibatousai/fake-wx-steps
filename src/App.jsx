@@ -11,9 +11,9 @@ const NavBar = () => {
 }
 
 const UserProfile = (props) => (
-  <div className="h-80 relative" style={{ background: `white url(${props.backgroundImage}) center/100vw 20rem no-repeat` }}>
+  <div className="h-80 relative" style={{ background: `white url(${props.backgroundImage}) center/100vw no-repeat` }}>
     <div className="bg-white p-1 rounded-md absolute -bottom-7 left-3 w-16 h-16">
-      <div className="rounded-md w-14 h-14" style={{ background: `green url(${props.avatar}) center/0.375rem 0.375rem no-repeat` }} />
+      <div className="rounded-md w-14 h-14" style={{ background: `green url(${props.avatar}) center/3.5rem no-repeat` }} />
     </div>
     <span className="text-xs text-white absolute bottom-1 left-20">{props.userNickName}</span>
   </div>
@@ -85,6 +85,18 @@ const SettingModal = React.forwardRef((props, ref) => {
     props.stepsChange(e.target.value)
   }
 
+  const handleDateChange = (e) => {
+    props.dateChange(e.target.value)
+  }
+
+  const handleRateCountChange = (e) => {
+    props.rateChange(e.target.value)
+  }
+  
+  const handleUserNickNameChange = (e) => {
+    props.userNickNameChange(e.target.value)
+  }
+
   return (
     <div className="fixed z-10 top-0 left-0 right-0 bottom-0 mx-auto bg-black bg-opacity-70" style={{ display }} ref={ref}>
       <div className="z-20 w-11/12 bg-white h-1/3 absolute top-0 left-0 right-0 bottom-0 m-auto rounded-lg p-4">
@@ -100,11 +112,11 @@ const SettingModal = React.forwardRef((props, ref) => {
         </div>
         <div className="flex items-center h-8">
           <span className="text-sm">设置昵称</span>
-          <input className="ml-4 outline-none border-b text-sm" type="text" placeholder="请输入昵称" />
+          <input className="ml-4 outline-none border-b text-sm" type="text" placeholder="请输入昵称" onChange={(e) => handleUserNickNameChange(e)} />
         </div>
         <div className="flex items-center h-8">
           <span className="text-sm">设置日期</span>
-
+          <input className="ml-4 outline-none border-b text-sm" type="text" placeholder="请输入日期" onChange={(e) => handleDateChange(e)} />
         </div>
         <div className="flex items-center h-8">
           <span className="text-sm">设置步数</span>
@@ -112,7 +124,7 @@ const SettingModal = React.forwardRef((props, ref) => {
         </div>
         <div className="flex items-center h-8">
           <span className="text-sm">设置点赞</span>
-          <input className="ml-4 outline-none border-b text-sm" type="text" placeholder="请输入点赞数" />
+          <input className="ml-4 outline-none border-b text-sm" type="text" placeholder="请输入点赞数" onChange={(e) => handleRateCountChange(e)} />
         </div>
         <div className="absolute bottom-2 right-2 text-white p-1 bg-blue-500 rounded-lg" onClick={(e) => { e.stopPropagation(); setDisplay('none') }}>
           Done
@@ -138,11 +150,12 @@ const App = () => {
         backgroundImage={backgroundImage}
         avatar={avatar}
         userNickName={userNickName}
+      />
+      <TodaySteps
         steps={steps}
         date={date}
         rateCount={rateCount}
       />
-      <TodaySteps />
       <Collects />
       <SettingModal
         ref={settingModalRef}
