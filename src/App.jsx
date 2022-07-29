@@ -1,4 +1,4 @@
-import React, { useState, useRef, useImperativeHandle, useEffect } from "react"
+import React, { useState, useRef, useImperativeHandle } from "react"
 import image2Base64 from './utils/image2Base64.js'
 const NavBar = () => {
   return (
