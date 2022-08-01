@@ -4,7 +4,7 @@ import html2canvas from 'html2canvas';
 
 const NavBar = () => {
   return (
-    <div className="flex w-full justify-between items-center h-12 px-3">
+    <div className="flex w-full justify-between items-center h-11 px-3">
       <i className="iconfont icon-back text-xs"></i>
       <span className="text-base font-bold">我的主页</span>
       <i className="iconfont icon-more text-xs"></i>
@@ -19,8 +19,8 @@ const UserProfile = (props) => {
   }
 
   return (
-    <div className="h-80 relative" onClick={() => notyShowSettingModal()}>
-      <div className="overflow-hidden h-80 w-full">
+    <div className="h-96 relative" onClick={() => notyShowSettingModal()}>
+      <div className="overflow-hidden h-96 w-full">
         <img src={props.backgroundImage} className="w-full" alt="" />
       </div>
       <div className="bg-white p-1 rounded-lg absolute -bottom-7 left-5 w-16 h-16 overflow-hiddenqws">
@@ -35,8 +35,8 @@ const UserProfile = (props) => {
 
 const TodaySteps = (props) => (
   <div className="mx-5">
-    <div className="flex justify-between items-center h-8 mt-11">
-      <span className="text-sm font-bold ml-2">今日运动</span>
+    <div className="flex justify-between items-center h-8 mt-9">
+      <span className="text-base font-bold ml-2">今日运动</span>
       <span className="text-sm flex items-center" style={{ color: "#717171" }}>
         {props.date}
         <i className="iconfont icon-forward"></i>
@@ -62,13 +62,13 @@ const Collects = (props) => {
   }
   return (
     <div className="mx-5 mt-4">
-      <div className=" bg-white py-4 px-4 text-sm font-bold rounded-md flex items-center justify-between rounded-bl-none rounded-br-none">
+      <div className=" bg-white py-4 px-4 text-base font-bold rounded-md flex items-center justify-between rounded-bl-none rounded-br-none">
         <span>
           我关注的人
         </span>
         <i className="iconfont icon-forward" style={{ color: '#6f6f6f' }}></i>
       </div>
-      <div className="bg-white mt-px py-4 px-4 text-sm font-bold rounded-md flex items-center justify-between rounded-tl-none rounded-tr-none" onClick={() => handleCapture()}>
+      <div className="bg-white mt-px py-4 px-4 text-base font-bold rounded-md flex items-center justify-between rounded-tl-none rounded-tr-none" onClick={() => handleCapture()}>
         <span>
           捐赠步数
         </span>
@@ -179,6 +179,7 @@ const App = () => {
       height: document.body.clientHeight,
       scrollY: 0,
       scrollX: 0,
+      backgroundColor: '#ededed',
       useCORS: true // 【重要】开启跨域配置
     }).then(function (canvas) {
       let src = canvas.toDataURL('image/png', 1)
