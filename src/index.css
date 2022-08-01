@@ -7,5 +7,9 @@ input::-webkit-input-placeholder {
 }
 
 .no-leading {
-  line-height: 0;
+  line-height: 0.5 !important;
+}
+
+body {
+  line-height: 0.5 !important;
 }
