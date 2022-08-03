@@ -119,6 +119,7 @@ const SettingModal = React.forwardRef((props, ref) => {
 
   const handleUserNickNameChange = (e) => {
     props.userNickNameChange(e.target.value)
+    localStorage.setItem('name', e.target.value)
   }
 
   return (
@@ -162,7 +163,7 @@ const App = () => {
   const currentDate = new Date();
   const [backgroundImage, setBackgroundImage] = useState(localStorage.getItem('bg') || '');
   const [avatar, setAvatar] = useState(localStorage.getItem('avatar') || '');
-  const [userNickName, setUserNickName] = useState('Example');
+  const [userNickName, setUserNickName] = useState(localStorage.getItem('name') || 'Example');
   const [steps, setSteps] = useState(12345);
   const [date, setDate] = useState(`${currentDate.getMonth() + 1}月${currentDate.getDate()}日`);
   const [rateCount, setRateCount] = useState(0);
